@@ -1,19 +1,19 @@
 (function () {
-    /*lang*********************************************************************************/
+    /* lang*********************************************************************************/
     
 
-    var C=Jet.__base__;
+    var C = Jet.__base__;
     Jet.__base__._useList.push('lang');
-    var _JT=C._JT;
-    var _lang = C._lang, _name = "Jname", _jl_name = '';
-    document.head._JT_append(_JT.ct("style")._JT_attr({
-        "type":"text/css",
-        "id":"__preload_jl"
-    })._JT_html("[Jlang]{visibility:hidden}"));
+    var _JT = C._JT;
+    var _lang = C._lang, _name = 'Jname', _jl_name = '';
+    document.head._JT_append(_JT.ct('style')._JT_attr({
+        'type': 'text/css',
+        'id': '__preload_jl'
+    })._JT_html('[Jlang]{visibility:hidden}'));
     Jet.lang = function (opt) {
         this.type = _lang;
         this.data = opt;
-    }
+    };
     Jet.lang.list = [];
     Jet.lang.used = false;
     Jet.lang.use = function (list) {
@@ -32,7 +32,7 @@
         if (obj == undefined) {
             list = _JT.attr(_lang);
         } else {
-            list = C._getJdomEle(obj)._JT_findAttr(_lang)
+            list = C._getJdomEle(obj)._JT_findAttr(_lang);
         }
         list._JT_each(function (item) {
             if (typeof item._jet_langs === 'undefined') {
@@ -42,12 +42,12 @@
                     item._jet_langs[attr] = _item._JT_html();
                 });
                 item._JT_html(item._jet_langs[Jet.lang.type]);
-                if(C._canUse('valid'))Jet.valid.init(item);
+                if (C._canUse('valid'))Jet.valid.init(item);
             }
         });
         Jet.$.id('__preload_jl')._JT_exist(function (item) {
             item._JT_remove();
-        })
+        });
     };
     Object.defineProperty(Jet.lang, 'type', {
         configurable: true,
@@ -62,18 +62,18 @@
             }
         }
     });
-    function _refreshLang() {
+    function _refreshLang () {
         if (Jet.lang.used) {
-            _JT.attr(_lang)._JT_each(function (item) {//静态文字
+            _JT.attr(_lang)._JT_each(function (item) {// 静态文字
                 item._JT_html(item._jet_langs[Jet.lang.type]);
-                if(C._canUse('valid'))Jet.valid.init(item);
+                if (C._canUse('valid'))Jet.valid.init(item);
             });
-            Jet.lang.jets._JT_each(function (item) {//绑定文字
+            Jet.lang.jets._JT_each(function (item) {// 绑定文字
                 item.refresh();
             });
         }
     }
     window.JL = function (opt) {
         return new Jet.lang(opt);
-    }
-})()
+    };
+})();

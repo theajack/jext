@@ -22,6 +22,9 @@ module.exports = {
   },
   "globals": {
     "window": true,
+    "Jet": true,
+    "JUI": true,
+    "$J": true,
   },
   "rules": {
     "no-extend-native": 0,

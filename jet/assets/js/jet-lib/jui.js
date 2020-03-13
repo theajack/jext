@@ -3612,7 +3612,7 @@
         this.ele.toggleClass(_ce_full);
         obj.toggleClass('icon-collapse-full');
         $J.body().toggleClass(_ce_hidden);
-        if(!this.ele.hasClass(_ce_full)){
+        if (!this.ele.hasClass(_ce_full)) {
             _checkSizeAuto(this.ele.findClass('code_editor'));
         }
     };
