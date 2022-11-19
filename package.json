@@ -46,7 +46,7 @@
         "node-html-parser": "^1.2.8",
         "virtual-dom": "^2.1.1",
         "webpack": "^4.41.2",
-        "webpack-cli": "^3.3.9",
+        "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.8.2"
     },
     "dependencies": {},
